@@ -1,0 +1,14 @@
+{
+	"category" : "Tealight-Web-Tools-Utilities",
+	"classinstvars" : [
+		"iconName" ],
+	"classvars" : [
+		"IconCache" ],
+	"commentStamp" : "TorstenBergmann 4/8/2016 14:57",
+	"instvars" : [
+		 ],
+	"name" : "TLIconCache",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

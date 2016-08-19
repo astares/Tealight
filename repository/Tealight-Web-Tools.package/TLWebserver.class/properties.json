@@ -1,0 +1,15 @@
+{
+	"category" : "Tealight-Web-Tools-Runtime",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"DefaultPort",
+		"DefaultServer" ],
+	"commentStamp" : "TorstenBergmann 8/19/2016 22:50",
+	"instvars" : [
+		"teapot" ],
+	"name" : "TLWebserver",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

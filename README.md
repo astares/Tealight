@@ -1,1 +1,1 @@
-# TealightInstall---------Just install it from you Pharo catalog. You can also install it executing scripts:```SmalltalkMetacello new 	repository: 'github://astares/Tealight/repository';	baseline: 'Tealight';	load: 'all'.
+# TealightInstall---------Just install it from you Pharo catalog. You can also install it executing scripts:```SmalltalkMetacello new 	repository: 'github://astares/Tealight/repository';	baseline: 'Tealight';	load 

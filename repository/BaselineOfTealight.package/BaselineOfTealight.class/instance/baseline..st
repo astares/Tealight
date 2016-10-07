@@ -20,7 +20,11 @@ baseline: spec
                 yourself.
 				spec  
                 package: 'Tealight-Web-Tools' with: [ spec requires: #('WebBrowser' 'Teapot') ].
-
+				spec  
+                package: 'Tealight-Tests-Web-Tools' with: [ spec requires: #('Tealight-Web-Tools') ].
 				spec
-                group: 'default' with: #('Tealight-Web-Tools')
+					group: 'Tools' with: #('Tealight-Web-Tools');
+					group: 'Tests' with: #('Tealight-Tests-Web-Tools');
+					group: 'all' with: #('Tests');
+					group: 'default' with: #('all')
 	]

@@ -1,0 +1,14 @@
+{
+	"category" : "Tealight-Web-Tools-REST-API-Building",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "TorstenBergmann 10/7/2016 23:23",
+	"instvars" : [
+		 ],
+	"name" : "TLVersionedRESTAPIBuilder",
+	"pools" : [
+		 ],
+	"super" : "TLRESTAPIBuilder",
+	"type" : "normal" }

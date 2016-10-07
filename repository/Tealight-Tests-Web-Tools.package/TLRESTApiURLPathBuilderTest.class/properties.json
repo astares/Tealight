@@ -1,0 +1,14 @@
+{
+	"category" : "Tealight-Tests-Web-Tools-REST-API-Utilities",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "TorstenBergmann 10/8/2016 00:19",
+	"instvars" : [
+		"backupAPIPrefix" ],
+	"name" : "TLRESTApiURLPathBuilderTest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

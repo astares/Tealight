@@ -124,7 +124,11 @@ Now we can define a class side method:
 greeting: aRequest	<REST_API: 'GET' pattern: 'hello'>		^'HelloWorld from Pharo'
 ```	
 
-Now we can use the utility class to generate the dynamic routes for us:
+As you see we use a pragma in this class marking the class side method as REST API method and defining the kind of HTTP method we support as well as the function path for our little REST service.
+
+### Generate our web API
+
+Now we can use the utility class to generate the dynamic routes for us sending a message to our class ending up in our method:
 
 ```Smalltalk
 TLRESTAPIBuilder buildAPI 
@@ -140,4 +144,49 @@ Also that by default there is an ***"api"*** prefix generated into the URL for a
 need to point your browser to:
 
   [http://localhost:8080/api/hello]()
+
+If you dislike the default API prefix you can customize this for your own needs:
+
+```Smalltalk
+TLRESTApiURLPathBuilder withoutPrefix   "have no API prefix in the URL" 
+```	
+
+which would result in [http://localhost:8080/hello]() or 
+
+```Smalltalk
+TLRESTApiURLPathBuilder useAPIPrefix: 'mykillerapp/myapi'   "have a custom API prefixin the URL" 
+```	
+
+to use a custom prefix for the API location [http://localhost:8080/mykillerapp/myapi/hello]()
+
+Advanced usage
+---------
+
+### Versioned REST APIs
+
+There are different architectural styles to define a web based API. As with any regular API you might want to version you API and use a specific part of the URL to depict the version that is used.
+
+If you want to do this you can use another pragma to 
+
+```Smalltalk
+callMe: aRequest	<REST_API: 'GET' versions: #('v1') pattern: 'hello'>		self halt
+```	
+
+Now rebuild the whole API quickly by cleaning up and regenerating the dynamic routes again (using the default prefix):	
+	
+```Smalltalk	
+TLRESTApiURLPathBuilder useStandardPrefix. 
+TLWebserver teapot removeAllDynamicRoutes.
+TLRESTAPIBuilder buildAPI 	
+```	
+
+This will now generate a [http://localhost:8080/api/v1/hello]() route - again with a call that ends up in our own method. The **v1** part in the URL shows the user of the API that this is for version 1 of the interface.
+
+As you may have quessed already you can give more than one version in the pragma. A function that
+is supported in two version can be annontated like this:
+
+```Smalltalk	
+callAnother: aRequest	<REST_API: 'GET' versions: #('v1' 'v2') pattern: 'hello'>		^'A method that is supported in both versions'
+```
+
 

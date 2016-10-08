@@ -189,7 +189,7 @@ is supported in two version can be annontated like this:
 
 ```Smalltalk	
 callAnother: aRequest	<REST_API: 'GET' versions: #('v1' 'v2') pattern: 'hello'>		^'A method that is supported in both versions'
-``s`
+```
 
 will create two dynamic routes:
 
@@ -227,4 +227,4 @@ While we demonstrated most code here with a HTTP GET all the examples could be d
 
 ### Summary
 
-Tealight makes it easy to experiment with Teapot framework and allows you to easily generate a web based API.ss
+Tealight makes it easy to experiment with Teapot framework and allows you to easily generate a web based API.

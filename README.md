@@ -198,11 +198,11 @@ will create two dynamic routes:
  * [http://localhost:8080/api/v1/hello]()
  * [http://localhost:8080/api/v2/hello]()
 
-### Advanced API
+### Advanced Usage
 
-Your API might change from one version of the web interface to another. 
+Over time the API that you provide in your webapp might change from one version of the web interface to another. 
 
-For instance a web method might need to be renamed. This can easily be done now:
+For instance a web method might need to be renamed to fix a typo. This can easily be done now:
 
 ```Smalltalk	
 callRenamed: aRequest    <REST_API: 'GET' versions: #('v1') pattern: 'oldName'>	 <REST_API: 'GET' versions: #('v2') pattern: 'newName'>    ^'A method that was renamed between two API versions'
@@ -212,9 +212,11 @@ will create two dynamic routes:
 
  * [http://localhost:8080/api/v1/oldName]()
  * [http://localhost:8080/api/v2/newName]()
+
+So in version **v1** you still support the old name but the users of your API are encouraged to use the new name in version **v2**.
   
-Or you want to move the location of a method in a new version of your interface but
-still stay compatible for the old version: 
+It might also be necessary to move the location of a method in a higher version of your interface - but
+you still might want to stay compatible to the old version: 
 
 ```Smalltalk	
 callMoved: aRequest    <REST_API: 'GET' versions: #('v1') pattern: 'firstAppearance'>	 <REST_API: 'GET' versions: #('v2') pattern: 'moved/newAppearance'>    ^'A method that was moved between two API versions' 
@@ -225,8 +227,9 @@ will create two dynamic routes:
  * [http://localhost:8080/api/v1/firstAppearance]()
  * [http://localhost:8080/api/v2/moved/newAppearance]()
 
-While we demonstrated most code here with a HTTP GET all the examples could be done with PUT, DELETE, POST, ... as well.
+So the old route could be used as well as the new one - but still a single Pharo method is called.
+
 
 ### Summary
 
-Tealight makes it easy to experiment with Teapot framework and allows you to easily generate a web based API.
+Tealight makes it easy to experiment with Teapot framework and allows you to easily generate a web based API. While we demonstrated most code here with a HTTP GET all the examples could be done with PUT, DELETE, POST, ... as well.

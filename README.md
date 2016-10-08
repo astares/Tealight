@@ -182,11 +182,49 @@ TLRESTAPIBuilder buildAPI
 
 This will now generate a [http://localhost:8080/api/v1/hello]() route - again with a call that ends up in our own method. The **v1** part in the URL shows the user of the API that this is for version 1 of the interface.
 
+### Supporting more than one version
+
 As you may have quessed already you can give more than one version in the pragma. A function that
 is supported in two version can be annontated like this:
 
 ```Smalltalk	
 callAnother: aRequest	<REST_API: 'GET' versions: #('v1' 'v2') pattern: 'hello'>		^'A method that is supported in both versions'
+``s`
+
+will create two dynamic routes:
+
+ * [http://localhost:8080/api/v1/hello]()
+ * [http://localhost:8080/api/v2/hello]()
+
+### Advanced API
+
+Your API might change from one version of the web interface to another. 
+
+For instance a web method might need to be renamed. This can easily be done now:
+
+```Smalltalk	
+callRenamed: aRequest    <REST_API: 'GET' versions: #('v1') pattern: 'oldName'>	 <REST_API: 'GET' versions: #('v2') pattern: 'newName'>    ^'A method that was renamed between two API versions'
 ```
 
+will create two dynamic routes:
 
+ * [http://localhost:8080/api/v1/oldName]()
+ * [http://localhost:8080/api/v2/newName]()
+  
+Or you want to move the location of a method in a new version of your interface but
+still stay compatible for the old version: 
+
+```Smalltalk	
+callMoved: aRequest    <REST_API: 'GET' versions: #('v1') pattern: 'firstAppearance'>	 <REST_API: 'GET' versions: #('v2') pattern: 'moved/newAppearance'>    ^'A method that was moved between two API versions' 
+```    
+
+will create two dynamic routes:
+
+ * [http://localhost:8080/api/v1/firstAppearance]()
+ * [http://localhost:8080/api/v2/moved/newAppearance]()
+
+While we demonstrated most code here with a HTTP GET all the examples could be done with PUT, DELETE, POST, ... as well.
+
+### Summary
+
+Tealight makes it easy to experiment with Teapot framework and allows you to easily generate a web based API.ss

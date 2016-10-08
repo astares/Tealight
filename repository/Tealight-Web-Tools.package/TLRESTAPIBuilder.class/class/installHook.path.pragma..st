@@ -4,7 +4,7 @@ installHook: httpMethod path: aPath pragma: aPragma
 	| action route |
 	action := Send
 					message: aPragma methodSelector
-					to: aPragma method methodClass.
+					to: aPragma method methodClass theNonMetaClass.
 	route := aPath -> action.
 	self teapot 
 				perform: (httpMethod , ':') asSymbol with: route

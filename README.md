@@ -13,6 +13,8 @@ After you have the framework installed you can easily start a **Tealight** web s
 
 from the Pharo world menu. Internally this starts a Teapot server with some defaults.
 
+![Tealight menu](images/Menu.png)
+
 You can also easily stop the server from the Tealight web server menu by using _"Stop webserver"_ or open a webbrowser on the server by using _"Browse"_.
 
 ### Accessing the default Teapot
@@ -184,7 +186,7 @@ This will now generate a [http://localhost:8080/api/v1/hello]() route - again wi
 
 ### Supporting more than one version
 
-As you may have quessed already you can give more than one version in the pragma. A function that
+As you may have guessed already you can give more than one version in the pragma. A function that
 is supported in two version can be annontated like this:
 
 ```Smalltalk	

@@ -129,3 +129,15 @@ Now we can use the utility class to generate the dynamic routes for us:
 ```Smalltalk
 TLRESTAPIBuilder buildAPI 
 ```	
+
+This creates the dynamic routes for us:
+
+
+![A dynamic route defined from a method](images/RESTRoute.png)
+
+
+Also that by default there is an ***"api"*** prefix generated into the URL for all REST based methods so you
+need to point your browser to:
+
+  [http://localhost:8080/api/hello]()
+

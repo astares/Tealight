@@ -164,7 +164,7 @@ Advanced usage
 
 ### Versioned REST APIs
 
-There are different architectural styles to define a web based API. As with any regular API you might want to version you API and use a specific part of the URL to depict the version that is used.
+There are different architectural styles to define a web based API. As with any regular API you might want to version your API and use a specific part of the URL to depict the version that is used.
 
 If you want to do this you can use another pragma to 
 

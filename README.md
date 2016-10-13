@@ -1,5 +1,5 @@
 # Tealight**Tealight** is a project defining a few extensions to the **Teapot framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
-Install---------You can install **Tealight** by executing the following load scripts:```SmalltalkMetacello new 	repository: 'github://astares/Tealight/repository';	baseline: 'Tealight';	load 	
+Install---------You can install **Tealight** by executing the following load scripts:```SmalltalkMetacello new 	repository: 'github://astares/Tealight/repository';	baseline: 'Tealight';	load 	
 ```	
 	
 Alternatively you can install **Tealight** also from the [Pharo catalog](http://catalog.pharo.org) using the *Catalog Browser* right from within your Pharo image.

@@ -1,0 +1,1 @@
+SmalltalkCISpec {  #loading : [    SCIMetacelloLoadSpec {      #baseline : 'Tealight',      #platforms : [ #pharo ],      #load : [ 'development' ]     }  ]}

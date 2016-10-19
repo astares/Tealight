@@ -1,1 +1,1 @@
-SmalltalkCISpec {  #loading : [    SCIMetacelloLoadSpec {      #baseline : 'Tealight',      #directory : 'repository',      #platforms : [ #pharo ],      #load : [ 'development' ]     }  ]}
+SmalltalkCISpec {  #loading : [    SCIMetacelloLoadSpec {      #baseline : 'Tealight',      #directory : 'repository',      #platforms : [ #pharo ],      #load : [ 'all' ]     }  ]}

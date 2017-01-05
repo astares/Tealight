@@ -1,0 +1,14 @@
+{
+	"category" : "ConfigurationOfTealight",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"LastVersionLoad" ],
+	"commentStamp" : "TorstenBergmann 9/15/2016 08:46",
+	"instvars" : [
+		"project" ],
+	"name" : "ConfigurationOfTealight",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

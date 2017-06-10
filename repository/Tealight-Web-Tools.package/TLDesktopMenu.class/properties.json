@@ -1,14 +1,11 @@
 {
-	"category" : "Tealight-Web-Tools-Desktop",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "TorstenBergmann 8/19/2016 23:22",
-	"instvars" : [
-		 ],
-	"name" : "TLDesktopMenu",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "Tealight-Web-Tools-Desktop",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TLDesktopMenu",
+	"type" : "normal"
+}

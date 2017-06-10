@@ -1,15 +1,16 @@
 {
+	"commentStamp" : "TorstenBergmann 8/19/2016 22:50",
+	"super" : "Object",
 	"category" : "Tealight-Web-Tools-Runtime",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"DefaultPort",
-		"DefaultServer" ],
-	"commentStamp" : "TorstenBergmann 8/19/2016 22:50",
+		"DefaultServer"
+	],
 	"instvars" : [
-		"teapot" ],
+		"teapot"
+	],
 	"name" : "TLWebserver",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

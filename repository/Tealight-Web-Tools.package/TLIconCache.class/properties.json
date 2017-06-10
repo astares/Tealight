@@ -1,14 +1,15 @@
 {
+	"commentStamp" : "TorstenBergmann 4/8/2016 14:57",
+	"super" : "Object",
 	"category" : "Tealight-Web-Tools-Utilities",
 	"classinstvars" : [
-		"iconName" ],
+		"iconName"
+	],
+	"pools" : [ ],
 	"classvars" : [
-		"IconCache" ],
-	"commentStamp" : "TorstenBergmann 4/8/2016 14:57",
-	"instvars" : [
-		 ],
+		"IconCache"
+	],
+	"instvars" : [ ],
 	"name" : "TLIconCache",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

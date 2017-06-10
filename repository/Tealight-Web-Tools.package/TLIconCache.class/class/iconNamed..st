@@ -2,6 +2,7 @@ accessing
 iconNamed: aSymbol
 	"Returns the icon with the given name"
 
+	(self canUnderstand: aSymbol) ifFalse: [ ^super iconNamed: aSymbol ].
 	^ self iconCache
 		at: aSymbol
 		ifAbsentPut: [ 

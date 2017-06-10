@@ -1,16 +1,17 @@
 {
-	"category" : "Tealight-Web-Tools-REST-API-Utilities",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		"APIPrefix" ],
 	"commentStamp" : "TorstenBergmann 10/8/2016 00:17",
+	"super" : "Object",
+	"category" : "Tealight-Web-Tools-REST-API-Utilities",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"APIPrefix"
+	],
 	"instvars" : [
 		"apiPrefix",
 		"version",
-		"function" ],
+		"function"
+	],
 	"name" : "TLRESTApiURLPathBuilder",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

@@ -7,4 +7,4 @@ iconNamed: aSymbol
 		at: aSymbol
 		ifAbsentPut: [ 
 			Form
-				fromBinaryStream: (Base64MimeConverter mimeDecodeToBytes: (self perform: (aSymbol , 'Contents') asSymbol) readStream) ]
+				fromBinaryStream: (self perform: (aSymbol , 'Contents') asSymbol) base64Decoded readStream ]

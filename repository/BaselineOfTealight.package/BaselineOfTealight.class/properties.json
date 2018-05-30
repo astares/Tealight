@@ -1,14 +1,11 @@
 {
-	"category" : "BaselineOfTealight",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "TorstenBergmann 8/20/2016 01:05",
-	"instvars" : [
-		 ],
-	"name" : "BaselineOfTealight",
-	"pools" : [
-		 ],
 	"super" : "BaselineOf",
-	"type" : "normal" }
+	"category" : "BaselineOfTealight",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfTealight",
+	"type" : "normal"
+}

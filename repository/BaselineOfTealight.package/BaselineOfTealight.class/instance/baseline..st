@@ -11,15 +11,9 @@ baseline: spec
                            versionString: #'stable';
                            repository: 'http://smalltalkhub.com/mc/TorstenBergmann/WebBrowser/main' ];
                 yourself.
-				spec
-                configuration: 'Teapot'
-                   with: [
-                       spec
-                           versionString: #'stable';
-                           repository: 'http://smalltalkhub.com/mc/zeroflag/Teapot/main' ];
-                yourself.
+				 
 				spec  
-                package: 'Tealight-Web-Tools' with: [ spec requires: #('WebBrowser' 'Teapot') ].
+                package: 'Tealight-Web-Tools' with: [ spec requires: #('Teapot') ].
 				spec  
                 package: 'Tealight-Tests-Web-Tools' with: [ spec requires: #('Tealight-Web-Tools') ].
 				spec

@@ -1,4 +1,0 @@
-running
-stop
-
-	teapot stop

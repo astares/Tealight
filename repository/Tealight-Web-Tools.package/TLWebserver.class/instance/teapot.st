@@ -1,4 +1,0 @@
-accessing
-teapot
-
-	^teapot

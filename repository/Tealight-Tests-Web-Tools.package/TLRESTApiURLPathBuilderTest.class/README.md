@@ -1,1 +1,0 @@
-A test class for TLRESTApiURLPathBuilder

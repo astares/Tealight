@@ -1,1 +1,0 @@
-A baseline for Tealight project

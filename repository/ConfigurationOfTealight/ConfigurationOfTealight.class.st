@@ -10,7 +10,7 @@ Class {
 	#classVars : [
 		'LastVersionLoad'
 	],
-	#category : 'ConfigurationOfTealight'
+	#category : #ConfigurationOfTealight
 }
 
 { #category : #'development support' }
@@ -170,6 +170,19 @@ ConfigurationOfTealight >> development: spec [
 
 ]
 
+{ #category : #versions }
+ConfigurationOfTealight >> pharo7: spec [
+	<version: '7.0'>
+
+	spec for: #'common' do: [ 
+		spec blessing: #'stable'.
+		spec
+			baseline: 'Tealight' with: [ 
+				spec 
+					className: 'BaselineOfTealight';
+					repository: 'github://astares/Tealight:pharo7/repository' ]]
+]
+
 { #category : #accessing }
 ConfigurationOfTealight >> project [
     ^ project
@@ -186,9 +199,9 @@ ConfigurationOfTealight >> project [
 ConfigurationOfTealight >> stable: spec [
 	<symbolicVersion: #'stable'>
 
-	spec for: #'common' version: '0.0.3'.
 	spec for: #'pharo5.x' version: '0.0.3'.
 	spec for: #'pharo6.x' version: '0.0.3'.	
+	spec for: #'common' version: '7.0'.	
 ]
 
 { #category : #versions }

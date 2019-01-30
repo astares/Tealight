@@ -20,6 +20,7 @@ TLDesktopMenu class >> menuCommandOn: aBuilder [
 	| parent |
 	parent := self mainMenuSymbol.
 	(aBuilder item: parent)
+		parent: #'Tools';
 		order: 3.0; 	 
 		icon: (TLIconCache appIcon).
 	aBuilder withSeparatorAfter .	

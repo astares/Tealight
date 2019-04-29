@@ -1,10 +1,22 @@
-# Tealight**Tealight** is a project defining a few extensions to the **Teapot framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
-Install---------You can install **Tealight** by executing the following load scripts:```SmalltalkMetacello new 	repository: 'github://astares/Tealight/repository';	baseline: 'Tealight';	load 	
+# Tealight
+
+**Tealight** is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
+
+Install
+---------
+You can install **Tealight** by executing the following load scripts:
+
+```Smalltalk
+Metacello new 
+	repository: 'github://astares/Tealight/repository';
+	baseline: 'Tealight';
+	load 	
 ```	
 	
 Alternatively you can install **Tealight** also from the [Pharo catalog](http://catalog.pharo.org) using the *Catalog Browser* right from within your Pharo image.
 
-Basic Usage---------
+Basic Usage
+---------
 
 ### Working with the Tealight server
 After you have the framework installed you can easily start a **Tealight** web server by selecting
@@ -47,7 +59,8 @@ So you can dynamically add new routes for GET, POST, DELETE or other HTTP method
 
 We recommend to read the [Teapot chapter of the Pharo Enterprise Book](https://ci.inria.fr/pharo-contribution/job/EnterprisePharoBook/lastSuccessfulBuild/artifact/book-result/Teapot/Teapot.html) to get a better understanding of the possibilities of the underlying **Teapot** framework.
 
-Experimenting---------
+Experimenting
+---------
 
 ### Experimenting with Dynamic Routes
 
@@ -97,7 +110,8 @@ If you (by accident) messed up with a single route defintion during your experim
 to delete a single route or all routes. You can even clean up via script:
 
 ```Smalltalk
-TLWebserver teapot 	removeAllDynamicRoutes 
+TLWebserver teapot 
+	removeAllDynamicRoutes 
 ```
 
 For the next part of this tutorial lets remove all defined routes.
@@ -117,13 +131,19 @@ To support that ***Tealight*** adds a special utility class (called _TLRESTAPIBu
 First of all we need to create a simple class in the system either from the browser or with an expression:
 
 ```Smalltalk
-Object subclass: #ExampleRESTAPI	instanceVariableNames: ''	classVariableNames: ''	package: 'MyApp-REST-API'
+Object subclass: #ExampleRESTAPI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'MyApp-REST-API'
 ```	
 
 Now we can define a class side method:
 
 ```Smalltalk
-greeting: aRequest	<REST_API: 'GET' pattern: 'hello'>		^'HelloWorld from Pharo'
+greeting: aRequest
+	<REST_API: 'GET' pattern: 'hello'>
+	
+	^'HelloWorld from Pharo'
 ```	
 
 As you see we use a pragma in this class marking the class side method as REST API method and defining the kind of HTTP method we support as well as the function path for our little REST service.
@@ -171,7 +191,10 @@ There are different architectural styles to define a web based API. As with any 
 If you want to do this you can use another pragma to 
 
 ```Smalltalk
-callMe: aRequest	<REST_API: 'GET' versions: #('v1') pattern: 'hello'>		self halt
+callMe: aRequest
+	<REST_API: 'GET' versions: #('v1') pattern: 'hello'>
+	
+	self halt
 ```	
 
 Now rebuild the whole API quickly by cleaning up and regenerating the dynamic routes again (using the default prefix):	
@@ -190,7 +213,10 @@ As you may have guessed already you can give more than one version in the pragma
 is supported in two version can be annontated like this:
 
 ```Smalltalk	
-callAnother: aRequest	<REST_API: 'GET' versions: #('v1' 'v2') pattern: 'hello'>		^'A method that is supported in both versions'
+callAnother: aRequest
+	<REST_API: 'GET' versions: #('v1' 'v2') pattern: 'hello'>
+	
+	^'A method that is supported in both versions'
 ```
 
 will create two dynamic routes:
@@ -205,7 +231,11 @@ Over time the API that you provide in your webapp might change from one version 
 For instance a web method might need to be renamed to fix a typo. This can easily be done now:
 
 ```Smalltalk	
-callRenamed: aRequest    <REST_API: 'GET' versions: #('v1') pattern: 'oldName'>	 <REST_API: 'GET' versions: #('v2') pattern: 'newName'>    ^'A method that was renamed between two API versions'
+callRenamed: aRequest
+    <REST_API: 'GET' versions: #('v1') pattern: 'oldName'>
+	 <REST_API: 'GET' versions: #('v2') pattern: 'newName'>
+
+    ^'A method that was renamed between two API versions'
 ```
 
 will create two dynamic routes:
@@ -219,7 +249,11 @@ It might also be necessary to move the location of a method in a higher version 
 you still might want to stay compatible to the old version: 
 
 ```Smalltalk	
-callMoved: aRequest    <REST_API: 'GET' versions: #('v1') pattern: 'firstAppearance'>	 <REST_API: 'GET' versions: #('v2') pattern: 'moved/newAppearance'>    ^'A method that was moved between two API versions' 
+callMoved: aRequest
+    <REST_API: 'GET' versions: #('v1') pattern: 'firstAppearance'>
+	 <REST_API: 'GET' versions: #('v2') pattern: 'moved/newAppearance'>
+
+    ^'A method that was moved between two API versions' 
 ```    
 
 will create two dynamic routes:

@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'backupAPIPrefix'
 	],
-	#category : 'Tealight-Tests-Web-Tools-REST-API-Utilities'
+	#category : #'Tealight-Web-Tools-Tests-REST-API-Utilities'
 }
 
 { #category : #utilities }

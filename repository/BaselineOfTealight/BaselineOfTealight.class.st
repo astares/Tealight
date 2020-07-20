@@ -4,7 +4,7 @@ A baseline for Tealight project
 Class {
 	#name : #BaselineOfTealight,
 	#superclass : #BaselineOf,
-	#category : 'BaselineOfTealight'
+	#category : #BaselineOfTealight
 }
 
 { #category : #baseline }
@@ -22,10 +22,10 @@ BaselineOfTealight >> baseline: spec [
 				spec  
                 package: 'Tealight-Web-Tools' with: [ spec requires: #('Teapot') ].
 				spec  
-                package: 'Tealight-Tests-Web-Tools' with: [ spec requires: #('Tealight-Web-Tools') ].
+                package: 'Tealight-Web-Tools-Tests' with: [ spec requires: #('Tealight-Web-Tools') ].
 				spec
 					group: 'Tools' with: #('Tealight-Web-Tools');
-					group: 'Tests' with: #('Tealight-Tests-Web-Tools');
+					group: 'Tests' with: #('Tealight-Web-Tools-Tests');
 					group: 'all' with: #('Tests');
 					group: 'default' with: #('all')
 	]

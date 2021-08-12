@@ -15,7 +15,7 @@ TLRESTAPIBuilder class >> allPragmas [
 	
 	|col|
 	col := (PragmaCollector new
-				filter: [ :prg | prg keyword = self pragmaKeyword ])
+				filter: [ :prg | prg selector = self pragmaKeyword ])
 				reset.
 	^col collected
 

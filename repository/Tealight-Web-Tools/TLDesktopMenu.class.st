@@ -50,7 +50,7 @@ TLDesktopMenu class >> serverMenuCommandOn: aBuilder [
 				
 	aBuilder withSeparatorAfter.
 
-	(aBuilder item: #'Browse')
+	(aBuilder item: #'Browse webserver')
 		parent: #'Webserver';
 		icon: TLIconCache serverIcon;
 		action: [ TLWebserver browse ]			

@@ -13,12 +13,7 @@ Class {
 TLRESTAPIBuilder class >> allPragmas [
 	"Return a collection of all the REST API pragmas"
 	
-	|col|
-	col := (PragmaCollector new
-				filter: [ :prg | prg key = self pragmaKeyword ])
-				reset.
-	^col collected
-
+	^ (PragmaCollector selectors: {self pragmaKeyword}) pragmas
 ]
 
 { #category : #'private - building' }

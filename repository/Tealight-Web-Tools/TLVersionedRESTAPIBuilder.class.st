@@ -4,11 +4,18 @@ An API builder for a versioned REST API
 Class {
 	#name : #TLVersionedRESTAPIBuilder,
 	#superclass : #TLRESTAPIBuilder,
-	#category : 'Tealight-Web-Tools-REST-API-Building'
+	#category : #'Tealight-Web-Tools-REST-API-Building'
 }
 
-{ #category : #'private - building' }
-TLVersionedRESTAPIBuilder class >> build [
+{ #category : #accessing }
+TLVersionedRESTAPIBuilder class >> pragmaKeyword [
+	"Return the Pragma keyword that is used to define a versioned REST API"
+	
+	^#REST_API:versions:pattern:
+]
+
+{ #category : #building }
+TLVersionedRESTAPIBuilder >> build [
 	"Build a regular API (unversioned) by installing a teapot route for each pragma definition"
 
 	self allPragmas do: [ :each | 
@@ -17,7 +24,7 @@ TLVersionedRESTAPIBuilder class >> build [
 ]
 
 { #category : #'private - utilities' }
-TLVersionedRESTAPIBuilder class >> pathFromPragma: aPragma [
+TLVersionedRESTAPIBuilder >> pathFromPragma: aPragma [
 	^(self newPathBuilder)			
 			version: aPragma arguments second;
 			function: aPragma arguments third;
@@ -25,23 +32,9 @@ TLVersionedRESTAPIBuilder class >> pathFromPragma: aPragma [
 ]
 
 { #category : #'private - utilities' }
-TLVersionedRESTAPIBuilder class >> pathFromPragma: aPragma version: aVersion [
+TLVersionedRESTAPIBuilder >> pathFromPragma: aPragma version: aVersion [
 	^(self newPathBuilder)			
 			version: aVersion;
 			function: aPragma arguments third;
 			path
-]
-
-{ #category : #'private - accessing' }
-TLVersionedRESTAPIBuilder class >> pragmaKeyword [
-	"Return the Pragma keyword that is used to define a versioned REST API"
-	
-	^#REST_API:versions:pattern:
-]
-
-{ #category : #'private - accessing' }
-TLVersionedRESTAPIBuilder >> pragmaKeyword [
-	"Return the Pragma keyword that is used to define a REST API"
-	
-	^#REST_API:versions:pattern:
 ]

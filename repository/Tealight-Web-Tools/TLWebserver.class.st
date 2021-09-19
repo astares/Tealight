@@ -11,7 +11,7 @@ Class {
 		'DefaultPort',
 		'DefaultServer'
 	],
-	#category : 'Tealight-Web-Tools-Runtime'
+	#category : #'Tealight-Web-Tools-Runtime'
 }
 
 { #category : #operating }
@@ -75,6 +75,12 @@ TLWebserver class >> teapot [
 	^self defaultServer teapot
 ]
 
+{ #category : #accessing }
+TLWebserver class >> teapotRefreshed [
+
+	^self defaultServer refreshTeapot
+]
+
 { #category : #'private - initialization' }
 TLWebserver >> initTeapot [
 
@@ -88,6 +94,13 @@ TLWebserver >> initialize [
 
 	super initialize.
 	self initTeapot
+]
+
+{ #category : #initialization }
+TLWebserver >> refreshTeapot [
+	self teapot server isRunning ifTrue: [ self stop ].
+	self initTeapot.
+	^ self teapot
 ]
 
 { #category : #running }

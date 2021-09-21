@@ -41,7 +41,7 @@ TkSuQmCC'
 TLIconCache class >> generateIcon [
 	<script>
 	
-	| base64Contents fileName contentsMethod iconMethod |  
+	| base64Contents fileName contentsMethod iconMethod iconName |  
 	fileName := UIManager default chooseFullFileNameMatching: #('png') label: 'Icon file'.
 	fileName ifNil: [ ^ self ].
 	iconName := UIManager default request: 'Icon name' initialAnswer: 'blank'.

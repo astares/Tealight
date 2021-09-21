@@ -12,7 +12,7 @@ Class {
 	#classInstVars : [
 		'iconName'
 	],
-	#category : 'Tealight-Web-Tools-Utilities'
+	#category : #'Tealight-Web-Tools-Utilities'
 }
 
 { #category : #icons }
@@ -42,7 +42,7 @@ TLIconCache class >> generateIcon [
 	<script>
 	
 	| base64Contents fileName contentsMethod iconMethod |  
-	fileName := UIManager default fileOpen: 'Icon file' extensions: #('png').
+	fileName := UIManager default chooseFullFileNameMatching: #('png') label: 'Icon file'.
 	fileName ifNil: [ ^ self ].
 	iconName := UIManager default request: 'Icon name' initialAnswer: 'blank'.
 	iconName ifNil: [ ^ self ].

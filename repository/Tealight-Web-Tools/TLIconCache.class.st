@@ -10,7 +10,7 @@ Class {
 		'IconCache'
 	],
 	#classInstVars : [
-		'iconName'
+		''
 	],
 	#category : #'Tealight-Web-Tools-Utilities'
 }

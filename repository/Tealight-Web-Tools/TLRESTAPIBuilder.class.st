@@ -12,6 +12,13 @@ Class {
 	#category : #'Tealight-Web-Tools-REST-API-Building'
 }
 
+{ #category : #accessing }
+TLRESTAPIBuilder class >> allPragmas [
+	"Return a collection of all the REST API pragmas"
+	
+	^ (PragmaCollector selectors: {self pragmaKeyword}) pragmas
+]
+
 { #category : #building }
 TLRESTAPIBuilder class >> buildAPI [
 	"Build the API from the receiver and subclasses"
@@ -55,9 +62,8 @@ TLRESTAPIBuilder class >> teapotRefreshed [
 
 { #category : #accessing }
 TLRESTAPIBuilder >> allPragmas [
-	"Return a collection of all the REST API pragmas"
 	
-	^ (PragmaCollector selectors: {self pragmaKeyword}) pragmas
+	^ self class allPragmas
 ]
 
 { #category : #building }

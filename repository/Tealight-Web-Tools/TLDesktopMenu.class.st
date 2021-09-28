@@ -10,7 +10,7 @@ Class {
 { #category : #'private - accessing' }
 TLDesktopMenu class >> mainMenuSymbol [
 
-	^#'Tealight'
+	^ #Tealight
 ]
 
 { #category : #'world menu' }
@@ -22,36 +22,36 @@ TLDesktopMenu class >> menuCommandOn: aBuilder [
 	(aBuilder item: parent)
 		order: 3.0; 	 
 		icon: (TLIconCache appIcon).
-	aBuilder withSeparatorAfter .	
+	aBuilder withSeparatorAfter	
 		
 	 
 ]
 
 { #category : #'world menu' }
-TLDesktopMenu class >> serverMenuCommandOn: aBuilder [ 
+TLDesktopMenu class >> serverMenuCommandOn: aBuilder [
+
 	<worldMenu>
-	
-	|parent|
+	| parent |
 	parent := self mainMenuSymbol.
-	(aBuilder item: #'Webserver')
+	(aBuilder item: #Webserver)
 		parent: parent;
-		order: 2;	
+		order: 2;
 		icon: TLIconCache serverIcon.
-	
+
 	(aBuilder item: #'Start webserver')
-		parent: #'Webserver';
+		parent: #Webserver;
 		icon: TLIconCache serverStartIcon;
 		action: [ TLWebserver start ].
-	
+
 	(aBuilder item: #'Stop webserver')
-		parent: #'Webserver';
+		parent: #Webserver;
 		icon: TLIconCache serverStopIcon;
 		action: [ TLWebserver stop ].
-				
+
 	aBuilder withSeparatorAfter.
 
 	(aBuilder item: #'Browse webserver')
-		parent: #'Webserver';
+		parent: #Webserver;
 		icon: TLIconCache serverIcon;
-		action: [ TLWebserver browse ]			
+		action: [ TLWebserver openWebbrowser ]
 ]

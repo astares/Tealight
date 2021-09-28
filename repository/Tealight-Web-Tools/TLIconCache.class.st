@@ -19,7 +19,7 @@ Class {
 TLIconCache class >> appIcon [
 	<script: 'self appIcon inspect'>
 
-	^self iconNamed: #appIcon
+	^ self iconNamed: #appIcon
 ]
 
 { #category : #'private - icons' }
@@ -74,7 +74,7 @@ TLIconCache class >> generateIcon [
 				cr;
 				cr;
 				tab;
-				nextPutAll: '^self iconNamed: #';
+				nextPutAll: '^ self iconNamed: #';
 				nextPutAll: iconName;
 				nextPutAll: 'Icon' ].
 	self class compile: contentsMethod classified: #'private - icons'.
@@ -111,7 +111,7 @@ TLIconCache class >> reset [
 TLIconCache class >> serverIcon [
 	<script: 'self serverIcon inspect'>
 
-	^self iconNamed: #serverIcon
+	^ self iconNamed: #serverIcon
 ]
 
 { #category : #'private - icons' }
@@ -138,7 +138,7 @@ PwCyhvLlWzqQAwAAAABJRU5ErkJggg=='
 TLIconCache class >> serverStartIcon [
 	<script: 'self serverStartIcon inspect'>
 	
-	^self iconNamed: #serverStartIcon
+	^ self iconNamed: #serverStartIcon
 ]
 
 { #category : #'private - icons' }
@@ -167,7 +167,7 @@ O3TcsBEfn6B4kvkXxV9YN+ClYBQAAAAASUVORK5CYII='
 TLIconCache class >> serverStopIcon [
 	<script: 'self serverStopIcon inspect'>
 
-	^self iconNamed: #serverStopIcon
+	^ self iconNamed: #serverStopIcon
 ]
 
 { #category : #'private - icons' }

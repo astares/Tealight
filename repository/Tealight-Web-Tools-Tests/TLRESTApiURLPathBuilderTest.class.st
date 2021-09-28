@@ -12,11 +12,11 @@ Class {
 
 { #category : #utilities }
 TLRESTApiURLPathBuilderTest >> buildWith: aBlock returnsPath: expectedPath [
+
 	| builder |
 	builder := self defaultTestClass new.
 	aBlock value: builder.
 	self assert: builder path equals: expectedPath
-	
 ]
 
 { #category : #'private - accessing' }
@@ -28,6 +28,7 @@ TLRESTApiURLPathBuilderTest >> defaultTestClass [
 { #category : #running }
 TLRESTApiURLPathBuilderTest >> setUp [
 	"Setup the test"
+
 	super setUp.
 	backupAPIPrefix := self defaultTestClass apiPrefix.
 	self defaultTestClass useStandardPrefix
@@ -35,13 +36,15 @@ TLRESTApiURLPathBuilderTest >> setUp [
 
 { #category : #running }
 TLRESTApiURLPathBuilderTest >> tearDown [
+
 	self defaultTestClass useAPIPrefix: backupAPIPrefix.
 	super tearDown
 ]
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testCustomPrefix [
-	|cls|
+
+	| cls |
 	cls := self defaultTestClass.
 	cls useAPIPrefix: '/myapp/api'.
 	self assert: cls apiPrefix equals: '/myapp/api'
@@ -49,51 +52,51 @@ TLRESTApiURLPathBuilderTest >> testCustomPrefix [
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testEmptyPathBuilding [
-	self 
-		buildWith: [:builder | ] 
-		returnsPath: '/api'
+
+	self buildWith: [ :builder |  ] returnsPath: '/api'
 ]
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testFullPathBuilding [
-	self 
-		buildWith: [:builder | 
-			builder 
+
+	self
+		buildWith: [ :builder | 
+			builder
 				apiPrefix: 'myapi';
 				version: 'v1';
-				function: 'foo' ] 
+				function: 'foo' ]
 		returnsPath: '/myapi/v1/foo'
 ]
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testPrefixedPathBuilding [
-	self 
-		buildWith: [:builder | 
-			builder 
+
+	self
+		buildWith: [ :builder | 
+			builder
 				apiPrefix: 'myPrefix';
-				version: 'v1' ] 
+				version: 'v1' ]
 		returnsPath: '/myPrefix/v1'
 ]
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testSimplePathBuilding [
-	self 
-		buildWith: [:builder | 
- ] 
-		returnsPath: '/api'
+
+	self buildWith: [ :builder |  ] returnsPath: '/api'
 ]
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testStandardPrefix [
-	|cls|
+
+	| cls |
 	cls := self defaultTestClass.
 	self assert: cls apiPrefix equals: 'api'
 ]
 
 { #category : #tests }
 TLRESTApiURLPathBuilderTest >> testVersionedPathBuilding [
-	self 
-		buildWith: [:builder | 
-			builder version: 'v1' ] 
+
+	self
+		buildWith: [ :builder | builder version: 'v1' ]
 		returnsPath: '/api/v1'
 ]

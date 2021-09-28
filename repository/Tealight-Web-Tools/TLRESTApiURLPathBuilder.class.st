@@ -25,10 +25,11 @@ Class {
 { #category : #accessing }
 TLRESTApiURLPathBuilder class >> apiPrefix [
 	"Return the API prefix"
+	
 	^APIPrefix 
 ]
 
-{ #category : #initialization }
+{ #category : #'class initialization' }
 TLRESTApiURLPathBuilder class >> initialize [
 	"initializes the receiver"
 	

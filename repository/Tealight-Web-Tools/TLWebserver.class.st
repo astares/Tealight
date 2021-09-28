@@ -15,15 +15,6 @@ Class {
 	#category : #'Tealight-Web-Tools-Runtime'
 }
 
-{ #category : #operating }
-TLWebserver class >> browse [
-	<script>
-	|baseURL|
-	baseURL := 'http://localhost'.
-	self defaultPort = 80 ifFalse: [ baseURL := baseURL ,':' , self defaultPort asString].
-	WebBrowser openOn: baseURL.
-]
-
 { #category : #defaults }
 TLWebserver class >> defaultConfiguration [
 	"Override to set more default values"
@@ -49,6 +40,7 @@ TLWebserver class >> defaultPort: anInteger [
 { #category : #defaults }
 TLWebserver class >> defaultServer [
 	"Return the default server"
+	
 	DefaultServer ifNil: [ self installAsDefaultServer ].
 	^DefaultServer 
 ]
@@ -61,13 +53,26 @@ TLWebserver class >> defaultServer: aTLWebServer [
 
 { #category : #'class initialization' }
 TLWebserver class >> initialize [
+
 	DefaultPort := nil.
 	DefaultServer := nil
 ]
 
-{ #category : #defaults }
+{ #category : #private }
 TLWebserver class >> installAsDefaultServer [
+
 	self defaultServer: self new
+]
+
+{ #category : #operating }
+TLWebserver class >> openWebbrowser [
+	<script>
+	
+	| baseURL |
+	baseURL := 'http://localhost'.
+	self defaultPort = 80 ifFalse: [ 
+		baseURL := baseURL , ':' , self defaultPort asString ].
+	WebBrowser openOn: baseURL
 ]
 
 { #category : #running }
@@ -92,19 +97,19 @@ TLWebserver class >> stop [
 	"Stop the server"
 	<script>
 	
-	^self defaultServer stop
+	^ self defaultServer stop
 ]
 
 { #category : #accessing }
 TLWebserver class >> teapot [
 
-	^self defaultServer teapot
+	^ self defaultServer teapot
 ]
 
 { #category : #accessing }
 TLWebserver class >> teapotRefreshed [
 
-	^self defaultServer refreshTeapot
+	^ self defaultServer refreshTeapot
 ]
 
 { #category : #accessing }

@@ -8,7 +8,7 @@ You can install **Tealight** by executing the following load scripts:
 
 ```Smalltalk
 Metacello new 
-	repository: 'github://astares/Tealight/repository';
+	repository: 'github://astares/Tealight/src';
 	baseline: 'Tealight';
 	load 	
 ```	

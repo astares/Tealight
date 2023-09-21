@@ -43,7 +43,7 @@ TLWebserver teapot
 	GET: '/hi' -> 'HelloWorld'
 ```
 
-If you point your browser to [http://localhost:8080/hi]() you will receive your first "HelloWorld" greeting.
+If you point your browser to [http://localhost:8080/hi](http://localhost:8080/hi) you will receive your first "HelloWorld" greeting.
 
 If you open an inspector on the Teapot instance 
 

@@ -74,9 +74,9 @@ TLWebserver teapot
 
 You can now use your web browser again to call the newly defined URL. This time you need to give a parameter when you point the webbrowser to the new URL. 
 
-[http://localhost:8080/hello/Pharo]()  returns **Hello Pharo** while
+[http://localhost:8080/hello/Pharo](http://localhost:8080/hello/Pharo)  returns **Hello Pharo** while
 
-[http://localhost:8080/hello/Smalltalk]()  returns **Hello Smalltalk** 
+[http://localhost:8080/hello/Smalltalk](http://localhost:8080/hello/Smalltalk)  returns **Hello Smalltalk** 
 
 ### Introduction to Teaspoon
 

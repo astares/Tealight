@@ -22,7 +22,7 @@ TLRESTApiURLPathBuilderTest >> buildWith: aBlock returnsPath: expectedPath [
 { #category : #'private - accessing' }
 TLRESTApiURLPathBuilderTest >> defaultTestClass [
 
-	^TLRESTApiURLPathBuilder
+	^ TLRESTApiURLPathBuilder
 ]
 
 { #category : #running }
@@ -60,7 +60,7 @@ TLRESTApiURLPathBuilderTest >> testEmptyPathBuilding [
 TLRESTApiURLPathBuilderTest >> testFullPathBuilding [
 
 	self
-		buildWith: [ :builder | 
+		buildWith: [ :builder |
 			builder
 				apiPrefix: 'myapi';
 				version: 'v1';
@@ -72,7 +72,7 @@ TLRESTApiURLPathBuilderTest >> testFullPathBuilding [
 TLRESTApiURLPathBuilderTest >> testPrefixedPathBuilding [
 
 	self
-		buildWith: [ :builder | 
+		buildWith: [ :builder |
 			builder
 				apiPrefix: 'myPrefix';
 				version: 'v1' ]

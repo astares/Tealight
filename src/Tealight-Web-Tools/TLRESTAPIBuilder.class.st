@@ -15,7 +15,7 @@ Class {
 { #category : #accessing }
 TLRESTAPIBuilder class >> allPragmas [
 	"Return a collection of all the REST API pragmas"
-	
+
 	^ (PragmaCollector selectors: {self pragmaKeyword}) pragmas
 ]
 
@@ -23,13 +23,12 @@ TLRESTAPIBuilder class >> allPragmas [
 TLRESTAPIBuilder class >> buildAPI [
 	"Build the API from the receiver and subclasses"
 	<script>
-	
+
 	self buildAPIFor: self teapotRefreshed
 ]
 
 { #category : #building }
 TLRESTAPIBuilder class >> buildAPIFor: aTeapot [
-
 	"Build the API from the receiver and subclasses"
 
 	<script>
@@ -38,26 +37,29 @@ TLRESTAPIBuilder class >> buildAPIFor: aTeapot [
 
 { #category : #'instance creation' }
 TLRESTAPIBuilder class >> on: aTeapot [
-	^ self new teapot: aTeapot; yourself
+
+	^ self new
+		  teapot: aTeapot;
+		  yourself
 ]
 
 { #category : #accessing }
 TLRESTAPIBuilder class >> pragmaKeyword [
 	"Return the Pragma keyword that is used to define a REST API"
-	
-	^#REST_API:pattern:
+
+	^ #REST_API:pattern:
 ]
 
 { #category : #accessing }
 TLRESTAPIBuilder class >> teapot [
 
-	^TLWebserver teapot
+	^ TLWebserver teapot
 ]
 
 { #category : #accessing }
 TLRESTAPIBuilder class >> teapotRefreshed [
 
-	^TLWebserver teapotRefreshed 
+	^ TLWebserver teapotRefreshed
 ]
 
 { #category : #accessing }

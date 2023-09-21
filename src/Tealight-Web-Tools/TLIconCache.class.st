@@ -9,9 +9,6 @@ Class {
 	#classVars : [
 		'IconCache'
 	],
-	#classInstVars : [
-		''
-	],
 	#category : #'Tealight-Web-Tools-Utilities'
 }
 
@@ -40,8 +37,8 @@ TkSuQmCC'
 { #category : #generate }
 TLIconCache class >> generateIcon [
 	<script>
-	
-	| base64Contents fileName contentsMethod iconMethod iconName |  
+
+	| base64Contents fileName contentsMethod iconMethod iconName |
 	fileName := UIManager default chooseFullFileNameMatching: #('png') label: 'Icon file'.
 	fileName ifNil: [ ^ self ].
 	iconName := UIManager default request: 'Icon name' initialAnswer: 'blank'.
@@ -49,7 +46,7 @@ TLIconCache class >> generateIcon [
 	base64Contents := (Base64MimeConverter mimeEncode: fileName binary) contents.
 	fileName close.
 	contentsMethod := String
-		streamContents: [ :s | 
+		streamContents: [ :s |
 			s
 				nextPutAll: iconName;
 				nextPutAll: 'IconContents';
@@ -61,7 +58,7 @@ TLIconCache class >> generateIcon [
 				nextPutAll: base64Contents;
 				nextPut: $' ].
 	iconMethod := String
-		streamContents: [ :s | 
+		streamContents: [ :s |
 			s
 				nextPutAll: iconName;
 				nextPutAll: 'Icon';
@@ -94,16 +91,16 @@ TLIconCache class >> iconNamed: aSymbol [
 	(self class canUnderstand: aSymbol) ifFalse: [ ^super iconNamed: aSymbol ].
 	^ self iconCache
 		at: aSymbol
-		ifAbsentPut: [ 
+		ifAbsentPut: [
 			Form
 				fromBinaryStream: (self perform: (aSymbol , 'Contents') asSymbol) base64Decoded readStream ]
 ]
 
-{ #category : #'initialization-release' }
+{ #category : #'class initialization' }
 TLIconCache class >> reset [
-	"Reset the icon cache"	
+	"Reset the icon cache"
+
 	<script>
-	
 	IconCache := nil
 ]
 
@@ -137,7 +134,7 @@ PwCyhvLlWzqQAwAAAABJRU5ErkJggg=='
 { #category : #icons }
 TLIconCache class >> serverStartIcon [
 	<script: 'self serverStartIcon inspect'>
-	
+
 	^ self iconNamed: #serverStartIcon
 ]
 

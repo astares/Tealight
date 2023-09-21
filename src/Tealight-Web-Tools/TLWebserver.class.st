@@ -18,36 +18,35 @@ Class {
 { #category : #defaults }
 TLWebserver class >> defaultConfiguration [
 	"Override to set more default values"
-	^ {
-		#port -> self defaultPort
- 	}
+
+	^ { (#port -> self defaultPort) }
 ]
 
 { #category : #defaults }
 TLWebserver class >> defaultPort [
 	"Return the default server port"
-	
+
 	^DefaultPort ifNil: [ DefaultPort := 8080 ]
 ]
 
 { #category : #defaults }
 TLWebserver class >> defaultPort: anInteger [
 	"Sets the default server port"
-	
-	DefaultPort := anInteger 
+
+	DefaultPort := anInteger
 ]
 
 { #category : #defaults }
 TLWebserver class >> defaultServer [
 	"Return the default server"
-	
+
 	DefaultServer ifNil: [ self installAsDefaultServer ].
-	^DefaultServer 
+	^DefaultServer
 ]
 
 { #category : #defaults }
 TLWebserver class >> defaultServer: aTLWebServer [
-	
+
 	DefaultServer := aTLWebServer
 ]
 
@@ -67,10 +66,10 @@ TLWebserver class >> installAsDefaultServer [
 { #category : #operating }
 TLWebserver class >> openWebbrowser [
 	<script>
-	
+
 	| baseURL |
 	baseURL := 'http://localhost'.
-	self defaultPort = 80 ifFalse: [ 
+	self defaultPort = 80 ifFalse: [
 		baseURL := baseURL , ':' , self defaultPort asString ].
 	WebBrowser openOn: baseURL
 ]
@@ -79,15 +78,15 @@ TLWebserver class >> openWebbrowser [
 TLWebserver class >> start [
 	"Start the server"
 	<script>
-	
+
 	^self defaultServer start
 ]
 
 { #category : #running }
 TLWebserver class >> startOn: aPort [
 	"start on the given port"
-	
-	self 
+
+	self
 		defaultPort: aPort;
 		start
 ]
@@ -96,7 +95,7 @@ TLWebserver class >> startOn: aPort [
 TLWebserver class >> stop [
 	"Stop the server"
 	<script>
-	
+
 	^ self defaultServer stop
 ]
 
@@ -114,7 +113,9 @@ TLWebserver class >> teapotRefreshed [
 
 { #category : #accessing }
 TLWebserver >> configuration [
-	^ configuration ifNil: [ configuration := self class defaultConfiguration ]
+
+	^ configuration ifNil: [
+		  configuration := self class defaultConfiguration ]
 ]
 
 { #category : #accessing }
@@ -138,21 +139,26 @@ TLWebserver >> initialize [
 
 { #category : #testing }
 TLWebserver >> isRunning [
+
 	^ self teapot server isRunning
 ]
 
 { #category : #printing }
 TLWebserver >> printOn: aStream [
+
 	aStream nextPutAll: 'a '.
 	aStream nextPutAll: self className.
 	aStream nextPut: $(.
-	aStream nextPutAll: (self isRunning ifTrue: [ 'running' ] ifFalse: [ 'stopped' ]).
+	aStream nextPutAll: (self isRunning
+			 ifTrue: [ 'running' ]
+			 ifFalse: [ 'stopped' ]).
 	aStream nextPut: $).
-	self configuration printOn: aStream.
+	self configuration printOn: aStream
 ]
 
 { #category : #initialization }
 TLWebserver >> refreshTeapot [
+
 	self teapot server isRunning ifTrue: [ self stop ].
 	self initTeapot.
 	^ self teapot
@@ -173,5 +179,5 @@ TLWebserver >> stop [
 { #category : #accessing }
 TLWebserver >> teapot [
 
-	^teapot
+	^ teapot
 ]

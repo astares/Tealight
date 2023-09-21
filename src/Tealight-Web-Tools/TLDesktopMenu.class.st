@@ -4,7 +4,7 @@ Desktop menu
 Class {
 	#name : #TLDesktopMenu,
 	#superclass : #Object,
-	#category : 'Tealight-Web-Tools-Desktop'
+	#category : #'Tealight-Web-Tools-Desktop'
 }
 
 { #category : #'private - accessing' }
@@ -14,17 +14,15 @@ TLDesktopMenu class >> mainMenuSymbol [
 ]
 
 { #category : #'world menu' }
-TLDesktopMenu class >> menuCommandOn: aBuilder [ 
+TLDesktopMenu class >> menuCommandOn: aBuilder [
 	<worldMenu>
-	
+
 	| parent |
 	parent := self mainMenuSymbol.
 	(aBuilder item: parent)
-		order: 3.0; 	 
+		order: 3.0;
 		icon: (TLIconCache appIcon).
-	aBuilder withSeparatorAfter	
-		
-	 
+	aBuilder withSeparatorAfter
 ]
 
 { #category : #'world menu' }

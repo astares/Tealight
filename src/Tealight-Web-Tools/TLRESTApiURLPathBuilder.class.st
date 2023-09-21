@@ -19,7 +19,7 @@ Class {
 	#classVars : [
 		'APIPrefix'
 	],
-	#category : 'Tealight-Web-Tools-REST-API-Utilities'
+	#category : #'Tealight-Web-Tools-REST-API-Utilities'
 }
 
 { #category : #accessing }
@@ -59,59 +59,64 @@ TLRESTApiURLPathBuilder class >> withoutPrefix [
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> apiPrefix [
+
 	^ apiPrefix
 ]
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> apiPrefix: anObject [
+
 	apiPrefix := anObject
 ]
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> function [
+
 	^ function
 ]
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> function: anObject [
+
 	function := anObject
 ]
 
 { #category : #initialization }
 TLRESTApiURLPathBuilder >> initialize [
 	"Initializes the receiver"
+
 	super initialize.
 	apiPrefix := self class apiPrefix.
 	version := String empty.
-	function := String empty.
+	function := String empty
 ]
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> path [
 
-	^String streamContents: [:s | 
-		self 
-			write: self apiPrefix on: s;
-			write: self version on: s;
-			write: self function on: s
-	 ].
-
+	^ String streamContents: [ :s |
+		  self
+			  write: self apiPrefix on: s;
+			  write: self version on: s;
+			  write: self function on: s ]
 ]
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> version [
+
 	^ version
 ]
 
 { #category : #accessing }
 TLRESTApiURLPathBuilder >> version: anObject [
+
 	version := anObject
 ]
 
 { #category : #'private  - writing' }
 TLRESTApiURLPathBuilder >> write: part on: aStream [
-	part isEmpty ifTrue: [ ^self ].
-	(part beginsWith: '/')
-		ifFalse: [ aStream nextPut: $/ ].
-	aStream nextPutAll: part	
+
+	part isEmpty ifTrue: [ ^ self ].
+	(part beginsWith: '/') ifFalse: [ aStream nextPut: $/ ].
+	aStream nextPutAll: part
 ]

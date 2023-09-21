@@ -57,7 +57,7 @@ you will see that a dynamic route was added:
 
 So you can dynamically add new routes for GET, POST, DELETE or other HTTP methods interactively.
 
-We recommend to read the [Teapot chapter of the Pharo Enterprise Book](https://ci.inria.fr/pharo-contribution/job/EnterprisePharoBook/lastSuccessfulBuild/artifact/book-result/Teapot/Teapot.html) to get a better understanding of the possibilities of the underlying **Teapot** framework.
+We recommend to read the [Teapot chapter of the Pharo Enterprise Book]([https://ci.inria.fr/pharo-contribution/job/EnterprisePharoBook/lastSuccessfulBuild/artifact/book-result/Teapot/Teapot.html](http://files.pharo.org/books-pdfs/entreprise-pharo/2016-10-06-EnterprisePharo.pdf)) to get a better understanding of the possibilities of the underlying **Teapot** framework.
 
 Experimenting
 ---------

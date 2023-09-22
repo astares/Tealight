@@ -27,6 +27,7 @@ BaselineOfTealight >> baseline: spec [
 		spec
 			group: 'Tools' with: #( 'Tealight-Web-Tools' );
 			group: 'Tests' with: #( 'Tealight-Web-Tools-Tests' );
+			group: 'CI' with: #( 'Tests' );
 			group: 'all' with: #( 'Tests' );
 			group: 'default' with: #( 'all' ) ]
 ]

@@ -1,6 +1,6 @@
 # Tealight
 
-**Tealight** is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
+**Tealight** is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) web framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
 
 
 [![Unit Tests](https://github.com/astares/Tealight/workflows/Build/badge.svg?branch=main)](https://github.com/astares/Tealight/actions?query=workflow%3ABuild)

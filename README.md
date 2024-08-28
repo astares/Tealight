@@ -1,6 +1,8 @@
 # Tealight
 
-**Tealight** is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) web framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
+**Tealight** is a web and REST framework for [Pharo](https://www.pharo.org)
+
+It is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) web framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
 
 
 [![Unit Tests](https://github.com/astares/Tealight/workflows/Build/badge.svg?branch=main)](https://github.com/astares/Tealight/actions?query=workflow%3ABuild)
@@ -11,6 +13,7 @@
 [![Pharo 9](https://img.shields.io/badge/Pharo-9.0-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo 11](https://img.shields.io/badge/Pharo-11-%23aac9ff.svg)](https://pharo.org/download)
+[![Pharo 12](https://img.shields.io/badge/Pharo-12-%23aac9ff.svg)](https://pharo.org/download)
 
 Install
 ---------

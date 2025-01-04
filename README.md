@@ -6,7 +6,7 @@ It is a project defining a few extensions to the **[Teapot](https://github.com/z
 
 [![Pharo](https://img.shields.io/static/v1?style=for-the-badge&message=Pharo&color=3297d4&logo=Harbor&logoColor=FFFFFF&label=)](https://www.pharo.org) 
 
-[![Unit Tests](https://github.com/astares/Tealight/workflows/Build/badge.svg?branch=main)](https://github.com/astares/Tealight/actions?query=workflow%3ABuild)
+[![Build](https://github.com/astares/Tealight/actions/workflows/build.yml/badge.svg)](https://github.com/astares/Tealight/actions/workflows/build.yml)
 [![Coverage Status](https://codecov.io/github/astares/Tealight/coverage.svg?branch=main)](https://codecov.io/gh/astares/Tealight/branch/main)
 
 [![Pharo 7](https://img.shields.io/badge/Pharo-7.0-%23aac9ff.svg)](https://pharo.org/download)

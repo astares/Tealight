@@ -1,6 +1,6 @@
 # Tealight
 
-**Tealight** is a web and REST framework for [Pharo](https://www.pharo.org)
+**Tealight** is a web and REST framework for [Pharo](https://www.pharo.org) written by T. Bergmann (astares)
 
 It is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) web framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
 
@@ -9,6 +9,7 @@ It is a project defining a few extensions to the **[Teapot](https://github.com/z
 [![Build](https://github.com/astares/Tealight/actions/workflows/build.yml/badge.svg)](https://github.com/astares/Tealight/actions/workflows/build.yml)
 [![Coverage Status](https://codecov.io/github/astares/Tealight/coverage.svg?branch=main)](https://codecov.io/gh/astares/Tealight/branch/main)
 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Pharo 7](https://img.shields.io/badge/Pharo-7.0-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo 8](https://img.shields.io/badge/Pharo-8.0-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo 9](https://img.shields.io/badge/Pharo-9.0-%23aac9ff.svg)](https://pharo.org/download)

@@ -4,6 +4,7 @@
 
 It is a project defining a few extensions to the **[Teapot](https://github.com/zeroflag/Teapot) web framework** to make the (tea) time you spend with the [Pharo](http://www.pharo.org) Teapot system even easier. 
 
+[![Pharo](https://img.shields.io/static/v1?style=for-the-badge&message=Pharo&color=3297d4&logo=Harbor&logoColor=FFFFFF&label=)](https://www.pharo.org) 
 
 [![Unit Tests](https://github.com/astares/Tealight/workflows/Build/badge.svg?branch=main)](https://github.com/astares/Tealight/actions?query=workflow%3ABuild)
 [![Coverage Status](https://codecov.io/github/astares/Tealight/coverage.svg?branch=main)](https://codecov.io/gh/astares/Tealight/branch/main)
